@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<style type="text/css">
+body{
+background-image:url(https://ugc.kn3.net/i/origin/http://es.best-wallpaper.net/wallpaper/1920x1080/1111/Beautiful-purple-nebula-in-space_1920x1080.jpg);
+background-repeat: no-repeat;
+background-position: center center;
+background-attachment: fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+color:white;
+}
+</style>
+</head>
+<body>
+<form id="formupeso" name="formupeso" method="POST">
+<br><br><br>
+<div class="container">
+<div class="row">
+<div class="col-lg-3">
+<div class="form-group">
+<label for="sel1">Selecciona el planeta</label>
+<select class="form-control" id="planetatxt" name="planetatxt" required="Digita el dato">
+<option value="1">Martes</option>
+<option value="2">Jupiter</option>
+</select>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="form-group">
+<label for="usr">Peso:</label>
+<input type="number"  class="form-control" name="pesotxt" id="pesotxt" placeholder="Digia tu peso por favor" required="digita el dato">
+</div> 
+</div>
+<div class="col-lg-3">
+<iv class="form-group">
+<label for="usr">Tu peso es:</label>
+<input type="number"  class="form-control" name="pesofinaltxt" id="pesofinaltxt" disabled>
+</div>
+</div>
+<br>
+
+<div class="col-12">
+ <button type="button" onclick="CalcularPeso()" class="btn btn-primary">Calcular tu peso</button>
+</div>
+
+</div>  
+</form>
+<script>
+function CalcularPeso(){
+var peso=document.formupeso.pesotxt.value;
+var planeta=document.formupeso.planetatxt.value;
+
+var g_tierra = 9.8;
+var g_marte = 3.7;
+var g_jupiter = 24.7;
+var peso_final;
+if (planeta == 1) 
+{
+peso_final = peso * g_marte / g_tierra;  
+}
+else if ( planeta=2)
+{
+peso_final = peso * g_jupiter / g_tierra;  
+}
+
+var n = peso_final.toFixed(1)
+document.formupeso.pesofinaltxt.value=n;
+
+}
+</script>
+</body>
+</html>
